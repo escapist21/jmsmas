@@ -1,0 +1,19 @@
+1. Fetch data from the google sheet and upload to MongoDB Atlas
+    - Create a new db in Atlas named "jms" ✅
+    - Create a collection within the db named "surveyData" ✅
+    - Connect the application with Atlas db "jms" ✅
+    - Fetch data from google sheet "Sample Survey Data" ✅
+    - Convert the fetched data to mongo insert objects ✅
+    - Perform a batch insert of the documents in the collection ✅
+
+2. Write a flask view that shows the data in a list view (tables)
+    - Query from the MongoDB db with the required filters ✅
+    - Iterate through the list of documents received and show on a tables ✅
+    - Make individual records clickable to open detailed view ✅
+
+3. Write a detail/edit view in flask for every queried document 
+    - Query the specific document from MongoDB with the KEY ✅
+    - Show all fields related to the document ✅
+    - Add a button to add comments per document 
+    - The comments should have all the editable fields
+

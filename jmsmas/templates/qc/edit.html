@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a class="btn btn-warning btn-sm" href="{{ url_for('qc.qc_detail', KEY=record['KEY']) }}"><i class="fa-solid fa-circle-arrow-left"></i> Go Back</a>
+<hr>
+<form method="post">
+    <div class="mb-3">
+        <label for="comments" class="form-label">Comments</label>
+        <textarea name="comments" id="comments" class="form-control" required>{{ request.form['comments'] or record['comments'] }}</textarea>
+    </div>
+    
+    <div class="mb-3">
+        <label for="rating" class="form-label">Rating</label>
+        <select class="form-select" name="rating" id="rating">
+            <option>Unacceptable</option>
+            <option>Poor</option>
+            <option>Satisfactory</option>
+            <option>Good</option>
+            <option>Excellent</option>
+        </select>
+    </div>
+    
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="accepted">
+        <label class="form-check-label" for="accepted">Accepted</label>
+    </div>
+    
+    <button class="btn btn-success btn-sm" type="submit"><i class="fa-solid fa-circle-arrow-right"></i> Submit</input>
+</form>
+{% endblock %}

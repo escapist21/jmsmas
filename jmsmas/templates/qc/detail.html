@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a class="btn btn-warning btn-sm" href="{{ url_for('qc.qc_index') }}"><i class="fa-solid fa-circle-arrow-left"></i> Go Back</a>
+<hr>
+<h2>QC for survey Key > {{record['KEY']}}</h2>
+<a class="btn btn-primary btn-sm" href="{{ record['audio_audit'] }}" rel="external"><i class="fa-solid fa-play"></i> Play audio</a>
+
+<table class="table table-striped table-sm">
+    <thead>
+        <tr>
+            <th scope="col">Field</th>
+            <th scope="col">Response</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Start Time</t>
+            <td>{{ record['start_time'] }}</td> 
+        </tr>
+        <tr>
+            <th scope="row">End Time</t>
+            <td>{{ record['end_time'] }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Duration</t>
+            <td>{{ record['duration'] }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Surveyor ID</t>
+            <td>{{ record['surveyor_id'] }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Age</t>
+            <td>{{ record['age'] }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Gender</t>
+            <td>{{ record['gender'] }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Comments</t>
+            <td>{{ record['comments'] }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Rating</t>
+            <td>{{ record['rating'] }}</td>
+        </tr>
+    </tbody>
+</table>
+<a class="btn btn-primary btn-sm" href="{{ url_for('qc.qc_edit', KEY=record['KEY']) }}"><i class="fa-solid fa-comment"></i> Add/Edit Comment</a>
+{% endblock %}
