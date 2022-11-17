@@ -20,13 +20,13 @@
     <tbody>
         {% for record in records %}
         <tr>
-            <td><a href="{{ url_for('qc.qc_detail', KEY=record['KEY']) }}">{{ record['KEY'] }}</a></td>
+            <td><a href="{{ url_for('qc.qc_detail', KEY=record['KEY']) }}" style="text-decoration: none;">{{ record['KEY'] }}</a></td>
             <td class="text-center">{{ record['duration'] }}</td>
             <td class="text-center">{{ record['surveyor_id'] }}</td>
             <td class="text-center">{{ record['district'] }}</td>
             <td class="text-center">{{ record['vidhansabha'] }}</td>
             <td class="text-center">{{ record['polling_station'] }}</td>
-            <td class="text-center"><a class="btn btn-primary btn-sm" href="{{ record['audio_audit'] }}"><i class="fa-solid fa-play"></i></a></td>
+            <td class="text-center "><a href="{{ record['audio_audit'] }}" target="_blank" style="text-decoration: none;">▶️</a></td>
             <td>{{ record['comments'] }}</td>
             <td class="text-center">{{ record['rating'] }}</td>
 
